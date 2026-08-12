@@ -25,12 +25,13 @@ import java.io.InputStream
 class XmlDetector extends Detector:
 
   val extractor = XmlRootExtractor()
+  private val readAheadLimit = 64 * 1024
 
   override def detect(input: InputStream, metadata: Metadata): MediaType =
     if filenameHasHtmlExtension(metadata) then
       MediaType.OCTET_STREAM
     else
-      input.mark(1024)
+      input.mark(readAheadLimit)
 
       try
         Option(extractor.extractRootElement(input))
