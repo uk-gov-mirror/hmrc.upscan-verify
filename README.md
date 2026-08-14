@@ -107,7 +107,7 @@ These commands will give you an access to SBT shell where you can run the servic
 
 The service is different from other services running on MDTP platform. It doesn't live in the MDTP AWS account nor platform's deployment tools like *Docktor* / *orchestrator* Jenkins, instead, it's deployed into Upscan's separate AWS account.
 
-**Important**: When the service runs withing Upscan AWS account, it takes AWS credentials from hosting EC2 instance. Using EC2 instace credentials is enabled by setting `aws.useContainerCredentials` property to `true`.
+**Important**: When the service runs within Upscan AWS account, it takes AWS credentials from the hosting EC2 instance. Using EC2 instance credentials is enabled by setting `aws.useContainerCredentials` property to `true`.
 
 `upscan-verify` is deployed using the Terraform in `upscan-infrastructure`, refer to the [README](https://github.com/hmrc/upscan-infrastructure#upscan-infrastructure) for instructions.
 
